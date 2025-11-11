@@ -1,0 +1,22 @@
+# SAMPLE TEMPLATE ONLY — REGENERATE IN YOUR ENV:
+#   pip install -r requirements/requirements_full.txt
+#   pip freeze --require-hashes > requirements/constraints.txt
+
+agent-framework==1.0.0b251105 \
+    --hash=sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+openai==1.51.0 \
+    --hash=sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+python-dotenv==1.0.1 \
+    --hash=sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+tqdm==4.66.5 \
+    --hash=sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+pydantic==2.9.2 \
+    --hash=sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+httpx==0.27.2 \
+    --hash=sha256:ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+aiohttp==3.10.8 \
+    --hash=sha256:1111111111111111111111111111111111111111111111111111111111111111
+tenacity==8.5.0 \
+    --hash=sha256:2222222222222222222222222222222222222222222222222222222222222222
+rich==13.9.3 \
+    --hash=sha256:3333333333333333333333333333333333333333333333333333333333333333
