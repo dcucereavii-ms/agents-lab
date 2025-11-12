@@ -9,4 +9,4 @@
 
 **Run**
 ```bash
-python 01_hello_agent.py
+python3 01_hello_agent.py

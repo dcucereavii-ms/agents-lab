@@ -6,7 +6,7 @@ Supports restricted networks where egress is allowed **only** to the GitHub Mode
 ---
 
 ## What you’ll build
-1. **Hello Agent** – a minimal agent, demonstrating instructions and a prompt loop  
+1. **Hello Agent** – a minimal agent demonstrating instructions and a prompt loop  
 2. **Agent + Tools** – a single agent that **invokes Python tools** via function‑calling  
 3. **Multi‑Agent Handoff** – a triage agent that **routes** to specialists  
 4. **Bonus** – **structured outputs** + creative extension tracks
@@ -20,8 +20,9 @@ Supports restricted networks where egress is allowed **only** to the GitHub Mode
 
 - **Python 3.10–3.12** and **Git**
 - A **GitHub token** with **Models** inference access
-- **Egress allow‑list** for: `https://models.inference.ai.azure.com`
-- If your org uses a TLS inspecting proxy:
+- **Egress allow‑list** for:  
+  `https://models.inference.ai.azure.com`
+- If your org uses a TLS-inspecting proxy:
   - Know your proxy URL and **root CA** path (set via env vars)
 
 See **./PRE-LAB-CHECKLIST.md** for a concise checklist to share with participants.
@@ -30,15 +31,25 @@ See **./PRE-LAB-CHECKLIST.md** for a concise checklist to share with participant
 
 ## ✅ Setup & Run Instructions
 
-> **Run all commands from the repo root** (where `requirements/` and `labs/` folders exist).
+> **Run all commands from the repo root** (where `requirements.txt` and `labs/` folders exist).  
+> Avoid installing under OneDrive or `/mnt/c` in WSL—use a non-synced path like `C:\dev\CIBC-Agents-Lab` or `~/work/CIBC-Agents-Lab`.
+
+---
 
 ### **Linux / macOS**
 ```bash
 cd /path/to/cibc-agents-lab
+rm -rf .venv
 python3 -m venv .venv && source .venv/bin/activate
-pip install --upgrade pip  ### Not mandatory. We often suggest it because it speeds up dependency resolution and avoids older resolver bugs, but the lab should work with the system’s pip as long as it supports modern wheels.###
-pip install -r requirements/requirements_full.txt
-pip install "agent-framework==1.0.0b251105" --pre
+
+# Install dependencies from single requirements file
+pip install --no-cache-dir -r requirements.txt
+
+# Configure environment
 cp env/.env.sample.github .env && nano .env
+
+# Verify environment variables
 python scripts/verify_env.py
+
+# Run first lab
 python labs/01_hello_agent/01_hello_agent.py

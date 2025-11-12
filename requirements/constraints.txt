@@ -1,22 +1,46 @@
-# SAMPLE TEMPLATE ONLY — REGENERATE IN YOUR ENV:
+# TEMPLATE — regenerate in your environment after a successful install:
 #   pip install -r requirements/requirements_full.txt
 #   pip freeze --require-hashes > requirements/constraints.txt
 
-agent-framework==1.0.0b251105 \
-    --hash=sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-openai==1.51.0 \
-    --hash=sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+openai==1.99.0 \
+    --hash=sha256:REPLACE_ME
+agent-framework==1.0.0b251108 \
+    --hash=sha256:REPLACE_ME
 python-dotenv==1.0.1 \
-    --hash=sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+    --hash=sha256:REPLACE_ME
 tqdm==4.66.5 \
-    --hash=sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-pydantic==2.9.2 \
-    --hash=sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    --hash=sha256:REPLACE_ME
 httpx==0.27.2 \
-    --hash=sha256:ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    --hash=sha256:REPLACE_ME
+httpcore==1.0.8 \
+    --hash=sha256:REPLACE_ME
+h11==0.14.0 \
+    --hash=sha256:REPLACE_ME
+anyio==4.10.0 \
+    --hash=sha256:REPLACE_ME
+sniffio==1.3.0 \
+    --hash=sha256:REPLACE_ME
 aiohttp==3.10.8 \
-    --hash=sha256:1111111111111111111111111111111111111111111111111111111111111111
-tenacity==8.5.0 \
-    --hash=sha256:2222222222222222222222222222222222222222222222222222222222222222
+    --hash=sha256:REPLACE_ME
+yarl==1.21.0 \
+    --hash=sha256:REPLACE_ME
+multidict==6.6.4 \
+    --hash=sha256:REPLACE_ME
+frozenlist==1.7.0 \
+    --hash=sha256:REPLACE_ME
+aiosignal==1.3.2 \
+    --hash=sha256:REPLACE_ME
+async-timeout==4.0.2 \
+    --hash=sha256:REPLACE_ME
+pydantic==2.9.2 \
+    --hash=sha256:REPLACE_ME
+annotated-types==0.6.0 \
+    --hash=sha256:REPLACE_ME
+typing-extensions==4.14.1 \
+    --hash=sha256:REPLACE_ME
 rich==13.9.3 \
-    --hash=sha256:3333333333333333333333333333333333333333333333333333333333333333
+    --hash=sha256:REPLACE_ME
+pygments==2.19.1 \
+    --hash=sha256:REPLACE_ME
+distro==1.8.0 \
+    --hash=sha256:REPLACE_ME

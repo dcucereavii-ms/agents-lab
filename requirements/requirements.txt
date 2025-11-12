@@ -1,0 +1,29 @@
+# ---- Core SDKs (lean; do NOT use the 'agent-framework' meta package) ----
+openai==1.109.1
+
+agent-framework-core==1.0.0b251108
+
+# ---- MCP gets pulled by AF core; pin once to stop resolver fishing ----
+mcp[ws]==1.21.0
+
+# ---- Pydantic: must satisfy mcp (>=2.11.0) & AF core (>=2) ----
+# Use a version your mirror lists; 2.12.4 is available per your error transcript
+pydantic==2.12.4
+# Avoid corrupted wheel we saw earlier
+pydantic-core!=2.41.3
+annotated-types==0.6.0
+typing-extensions==4.14.1
+
+# ---- Environment & utilities ----
+python-dotenv==1.0.1
+tqdm==4.66.5
+rich==13.9.3
+pygments==2.19.1
+distro==1.8.0
+
+# ---- HTTP stack (pins reduce backtracking) ----
+httpx==0.27.2
+httpcore==1.0.8
+h11==0.14.0
+anyio==4.10.0
+sniffio==1.3.0
