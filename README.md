@@ -36,7 +36,7 @@ See **./PRE-LAB-CHECKLIST.md** for a concise checklist to share with participant
 ```bash
 cd /path/to/cibc-agents-lab
 python3 -m venv .venv && source .venv/bin/activate
-pip install --upgrade pip
+pip install --upgrade pip  ### Not mandatory. We often suggest it because it speeds up dependency resolution and avoids older resolver bugs, but the lab should work with the system’s pip as long as it supports modern wheels.###
 pip install -r requirements/requirements_full.txt
 pip install "agent-framework==1.0.0b251105" --pre
 cp env/.env.sample.github .env && nano .env
