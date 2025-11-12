@@ -1,6 +1,9 @@
 # CIBC Agents Lab (Python + Microsoft Agent Framework + GitHub Models)
 
-This repo contains a **90‑minute, Python‑first lab** for building **AI agents** using the **Microsoft Agent Framework** with **GitHub Models** (OpenAI‑compatible API). It supports a restricted network posture where egress is allowed **only** to the GitHub Models inference endpoint.
+This repo contains a **90‑minute, Python‑first lab** for building **AI agents** using the **Microsoft Agent Framework** with **GitHub Models** (OpenAI‑compatible API).  
+Supports restricted networks where egress is allowed **only** to the GitHub Models inference endpoint.
+
+---
 
 ## What you’ll build
 1. **Hello Agent** – a minimal agent, demonstrating instructions and a prompt loop  
@@ -13,10 +16,10 @@ This repo contains a **90‑minute, Python‑first lab** for building **AI agent
 
 ---
 
-## Prerequisites
+## ✅ Prerequisites
 
 - **Python 3.10–3.12** and **Git**
-- A **GitHub token** with **Models** inference access (enterprise policy permitting)
+- A **GitHub token** with **Models** inference access
 - **Egress allow‑list** for: `https://models.inference.ai.azure.com`
 - If your org uses a TLS inspecting proxy:
   - Know your proxy URL and **root CA** path (set via env vars)
@@ -25,15 +28,17 @@ See **./PRE-LAB-CHECKLIST.md** for a concise checklist to share with participant
 
 ---
 
-## Install & run
+## ✅ Setup & Run Instructions
 
-> You can use any workflow you like (pip, uv, conda). Shown below: standard `pip`+venv.
+> **Run all commands from the repo root** (where `requirements/` and `labs/` folders exist).
 
-1) Create a virtual environment
+### **Linux / macOS**
 ```bash
-python -m venv .venv
-# macOS/Linux:
-source .venv/bin/activate
-# Windows (PowerShell):
-# .\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
+cd /path/to/cibc-agents-lab
+python3 -m venv .venv && source .venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements/requirements_full.txt
+pip install "agent-framework==1.0.0b251105" --pre
+cp env/.env.sample.github .env && nano .env
+python scripts/verify_env.py
+python labs/01_hello_agent/01_hello_agent.py
