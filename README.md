@@ -1,4 +1,4 @@
-# CIBC Agents Lab (Python + Microsoft Agent Framework + GitHub Models)
+# Agents Lab (Python + Microsoft Agent Framework + GitHub Models)
 
 This repo contains a **90-minute, Python-first lab** for building **AI agents** using the **Microsoft Agent Framework** with **GitHub Models** (OpenAI-compatible API).  
 Designed for restricted networks where egress is allowed **only** to the GitHub Models inference endpoint.
@@ -44,13 +44,13 @@ Create a `.env` in the repo root (you can start from `env/.env.sample.github`).
 ## ✅ Environment Setup
 
 > **Run all commands from the repo root** (where `requirements.txt` and `labs/` live).  
-> Avoid installing under OneDrive or `/mnt/c` in WSL—use a non-synced path like `C:\dev\CIBC-Agents-Lab` or `~/work/CIBC-Agents-Lab`.
+> Avoid installing under OneDrive or `/mnt/c` in WSL—use a non-synced path like `C:\dev\Agents-Lab` or `~/work/Agents-Lab`.
 
 ### Linux / macOS
 
 ```bash
 # Navigate to repo root
-cd /path/to/CIBC-Agents-Lab
+cd /path/to/Agents-Lab
 
 # Fresh virtual environment
 rm -rf .venv
@@ -79,7 +79,7 @@ python labs/99_bonus_paths/99a_structured_outputs.py
 
 ```powershell
 # Navigate to repo root
-cd "C:\path\to\CIBC-Agents-Lab"
+cd "C:\path\to\Agents-Lab"
 
 # Fresh virtual environment
 Remove-Item -Recurse -Force .venv -ErrorAction SilentlyContinue
