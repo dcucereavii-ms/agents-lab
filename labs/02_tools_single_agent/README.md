@@ -9,4 +9,9 @@
 
 **Run**
 ```bash
+
+**Windows**
 python 02_agent_with_tool.py
+
+**Linux / macOS***
+python3 02_agent_with_tool.py

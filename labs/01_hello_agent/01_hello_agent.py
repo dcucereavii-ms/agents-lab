@@ -12,7 +12,7 @@ async def main():
     chat = OpenAIChatClient(
         api_key=os.getenv("OPENAI_API_KEY"),  # GitHub token
         base_url=os.getenv("OPENAI_BASE_URL"),  # https://models.inference.ai.azure.com
-        model_id=os.getenv("OPENAI_CHAT_MODEL", "gpt-4o-mini"),  # ✅ GitHub model name
+        model_id=os.getenv("OPENAI_CHAT_MODEL", "gpt-4o-mini"),  # GitHub model name
     )
 
     agent = chat.create_agent(

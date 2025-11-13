@@ -9,4 +9,9 @@
 
 **Run**
 ```bash
+
+**Windows**
+python 01_hello_agent.py
+
+**Linux / macOS***
 python3 01_hello_agent.py

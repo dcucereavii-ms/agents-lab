@@ -9,4 +9,8 @@
 
 **Run**
 ```bash
+**Windows**
 python 03_multi_agent_handoff.py
+
+**Linux / macOS***
+python3 03_multi_agent_handoff.py
