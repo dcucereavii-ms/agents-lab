@@ -1,9 +1,9 @@
-<div align="center" style="border: 2px solid #ccc; border-radius: 10px; padding: 15px; background-color: #f9f9f9;">
+<div align="center" style="border: 2px solid #ccc; border-radius: 10px; padding: 10px 15px; background-color: #f9f9f9;">
 
 <table>
 <tr>
-<td style="width: 120px; text-align: center; vertical-align: middle;">
-  <img src="images/main-readme.png" alt="Agent Framework Labs" width="100"/>
+<td style="width: 200px; text-align: center; vertical-align: middle;">
+  <img src="images/agents-lab-main.png" alt="Agent Framework Labs" width="200"/>
 </td>
 <td style="text-align: left; vertical-align: middle;">
   <h1>Agents Lab<br><small>(Python + Microsoft Agent Framework + GitHub Models)</small></h1>
