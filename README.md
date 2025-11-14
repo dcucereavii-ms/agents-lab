@@ -3,7 +3,7 @@
 <table>
 <tr>
 <td style="width: 200px; text-align: center; vertical-align: middle;">
-  <img src="images/agents-lab-main.png" alt="Agent Framework Labs" width="200"/>
+  <img src="images/main-readme.png" alt="Agent Framework Labs" width="200"/>
 </td>
 <td style="text-align: left; vertical-align: middle;">
   <h1>Agents Lab<br><small>(Python + Microsoft Agent Framework + GitHub Models)</small></h1>
