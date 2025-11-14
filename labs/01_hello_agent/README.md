@@ -3,7 +3,7 @@
 <table>
 <tr>
 <td style="width: 200px; text-align: center; vertical-align: middle;">
-  <img src="images/lab01-readme.png" alt="Lab 01 – Hello Agent" width="200"/>
+  <img src="../../images/lab01-readme.png" alt="Lab 01 – Hello Agent" width="200"/>
 </td>
 <td style="text-align: left; vertical-align: middle;">
   <h1>Lab 01 — Hello Agent</h1>
