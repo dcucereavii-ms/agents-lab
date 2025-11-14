@@ -72,7 +72,7 @@ source .venv/bin/activate
 
 # Upgrade pip and install deps
 python -m pip install --upgrade pip
-pip install --no-cache-dir -r requirements.txt
+pip install --no-cache-dir -r requirements/requirements.txt
 
 # Configure environment
 cp env/.env.sample.github .env
@@ -104,7 +104,7 @@ python -m venv .venv
 
 # Upgrade pip and install deps
 python -m pip install --upgrade pip
-pip install --no-cache-dir -r requirements.txt
+pip install --no-cache-dir -r requirements\requirements.txt
 
 # Configure environment
 Copy-Item env\.env.sample.github .env
