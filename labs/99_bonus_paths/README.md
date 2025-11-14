@@ -1,4 +1,18 @@
-# Bonus — Advanced & Creative Tracks
+<div align="center" style="border: 2px solid #ccc; border-radius: 10px; padding: 10px 15px; background-color: #f9f9f9;">
+
+<table>
+<tr>
+<td style="width: 200px; text-align: center; vertical-align: middle;">
+  <img src="images/lab04-readme.png" alt="Lab 01 – Hello Agent" width="200"/>
+</td>
+<td style="text-align: left; vertical-align: middle;">
+  <h1>Lab 04 — Structured Outputs</h1>
+  <em>Bonus — Advanced & Creative Tracks</em>
+</td>
+</tr>
+</table>
+
+</div>
 
 Pick one (or more) and experiment:
 

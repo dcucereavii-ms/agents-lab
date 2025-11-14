@@ -1,6 +1,18 @@
-# Lab 02 — Agent with Tools
+<div align="center" style="border: 2px solid #ccc; border-radius: 10px; padding: 10px 15px; background-color: #f9f9f9;">
 
-**Goal:** Teach an agent to call **Python functions** (tools) via function-calling.
+<table>
+<tr>
+<td style="width: 200px; text-align: center; vertical-align: middle;">
+  <img src="images/lab02-readme.png" alt="Lab 01 – Hello Agent" width="200"/>
+</td>
+<td style="text-align: left; vertical-align: middle;">
+  <h1>Lab 02 — Agent with Tools</h1>
+  <em>Teach an agent to call **Python functions** (tools) via function-calling.</em>
+</td>
+</tr>
+</table>
+
+</div>
 
 **What you’ll learn**
 - Declaring tools with **names, descriptions, and JSON schemas**
@@ -9,7 +21,6 @@
 
 **Run**
 ```bash
-
 **Windows**
 python 02_agent_with_tool.py
 
