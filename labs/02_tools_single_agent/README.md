@@ -7,17 +7,23 @@
 </td>
 <td style="text-align: left; vertical-align: middle;">
   <h1>Lab 02 — Agent with Tools</h1>
-  <em>Teach an agent to call **Python functions** (tools) via function-calling.</em>
+  <em>Teach an agent to work with tools.</em>
 </td>
 </tr>
 </table>
 
 </div>
 
+
+> **Note:** In this lab, we simulate tool calls locally and then use the model to summarize the outcome because GitHub Models currently does not support OpenAI-style tool calling.
+
+---
+
 **What you’ll learn**
 - Declaring tools with **names, descriptions, and JSON schemas**
-- Attaching Python implementations to tools
-- Letting the model decide **when** to call which tool
+- Implementing Python functions for tools
+- Simulating tool calls locally and passing results to the model for summarization
+
 
 **Run**
 ```bash

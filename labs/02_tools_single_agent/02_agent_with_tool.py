@@ -1,89 +1,93 @@
-import asyncio
 import os
+import json
+import requests
 from dotenv import load_dotenv
 
-# Load .env so we don't rely on shell exports
-load_dotenv()
+# Load .env and override any shell vars
+load_dotenv(override=True)
 
-from agent_framework.openai import OpenAIChatClient
+# Force GitHub Models endpoint
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY") or ""
+BASE_URL = "https://models.github.ai/inference"
+MODEL = os.getenv("OPENAI_CHAT_MODEL") or "gpt-4o-mini"
 
 # -----------------------------
-# 1) Python implementations
+# 1) Tools with logging
 # -----------------------------
 def get_quote(symbol: str) -> float:
-    quotes = {"MSFT": 425.20, "CIBC": 58.40, "CM": 58.40}
-    return quotes.get(symbol.upper(), 100.00)
+    print(f"[Tool Called] get_quote(symbol={symbol})")
+    quotes = {"EXCALIBUR": 100.0, "MSFT": 425.20, "CIBC": 58.40, "CM": 58.40}
+    return quotes.get(symbol.upper(), 100.0)
 
 def place_order(symbol: str, quantity: int) -> dict:
+    print(f"[Tool Called] place_order(symbol={symbol}, quantity={quantity})")
     return {
-        "status": "filled",
+        "status": "filled" if quantity > 0 else "rejected",
         "symbol": symbol.upper(),
         "qty": quantity,
         "avg_price": get_quote(symbol),
+        "note": "fantasy/classroom simulation"
     }
 
 # -----------------------------
-# 2) Tool specs (JSON ONLY)
-#    DO NOT put Python functions in these dicts
+# 2) Local simulation logic
 # -----------------------------
-TOOL_SPECS = [
-    {
-        "type": "function",
-        "function": {
-            "name": "get_quote",
-            "description": "Get the latest quote for a symbol.",
-            "parameters": {
-                "type": "object",
-                "properties": {"symbol": {"type": "string"}},
-                "required": ["symbol"],
-            },
-        },
-    },
-    {
-        "type": "function",
-        "function": {
-            "name": "place_order",
-            "description": "Place a simulated market order.",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "symbol": {"type": "string"},
-                    "quantity": {"type": "integer"},
-                },
-                "required": ["symbol", "quantity"],
-            },
-        },
-    },
-]
+symbol = "EXCALIBUR"
+power = get_quote(symbol)
+order_result = None
+if power < 500:
+    order_result = place_order(symbol, 10)
 
-async def main():
-    # IMPORTANT for this AF build: pass model_id (not model) at client init
-    chat = OpenAIChatClient(
-        api_key=os.getenv("OPENAI_API_KEY"),           # GitHub token
-        base_url=os.getenv("OPENAI_BASE_URL"),         # https://models.inference.ai.azure.com
-        model_id=os.getenv("OPENAI_CHAT_MODEL", "gpt-4o-mini"),
-    )
+# -----------------------------
+# 3) Prompt for model summary
+# -----------------------------
+summary_prompt = (
+    f"Fantasy quest simulation:\n"
+    f"Power level of {symbol}: {power}\n"
+    f"Order result: {json.dumps(order_result)}\n"
+    f"Write a short, fun summary of the quest outcome."
+)
 
-    # Option A (preferred on recent AF core): pass specs + implementations separately
-    trader = chat.create_agent(
-        name="capital_markets_trader",
-        instructions=(
-            "Educational only. Use tools to get quotes and place paper trades when asked. "
-            "Never provide financial advice; remind users of risks."
-        ),
-        tools=TOOL_SPECS,
-        # Map function name -> Python callable
-        tool_implementations={
-            "get_quote": get_quote,
-            "place_order": place_order,
-        },
-    )
+# -----------------------------
+# 4) Call GitHub Models API
+# -----------------------------
+def chat_completions(prompt):
+    url = f"{BASE_URL}/v1/chat/completions"
+    headers = {
+        "Authorization": f"Bearer {OPENAI_API_KEY}",
+        "Content-Type": "application/json",
+    }
+    body = {
+        "model": MODEL,
+        "messages": [{"role": "user", "content": prompt}],
+        "temperature": 0.7,
+    }
+    resp = requests.post(url, headers=headers, data=json.dumps(body), timeout=60)
+    resp.raise_for_status()
+    return resp.json()
 
-    # If your AF build doesn't accept 'tool_implementations', try Option B below.
+# -----------------------------
+# 5) Entrypoint
+# -----------------------------
+def main():
+    print("\n=== Environment ===")
+    print("OPENAI_BASE_URL =", BASE_URL)
+    print("OPENAI_CHAT_MODEL =", MODEL)
+    print("====================\n")
 
-    prompt = "Buy 10 shares of MSFT if the price is under $500. Confirm the simulated fill."
-    result = await trader.run(prompt)
-    print(result)
+    response = chat_completions(summary_prompt)
+    content = (response.get("choices") or [{}])[0].get("message", {}).get("content")
+
+    print("\n--- Simulation Output ---")
+    print(content)
+
+    # Tools summary
+    print("\n--- Tools Used ---")
+    print(f"get_quote called for: {symbol}")
+    if order_result:
+        print(f"place_order called for: {symbol}, qty=10")
+    else:
+        print("place_order was NOT called")
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()
