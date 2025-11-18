@@ -33,7 +33,7 @@ Designed for restricted networks where egress is allowed **only** to the GitHub 
 - **Python 3.10 – 3.12** and **Git**
 - A **GitHub token** with **Models inference** access
 - **Egress allow-list** for:  
-  `https://models.inference.ai.azure.com`
+  `https://models.github.ai/inference`
 - If your org uses a TLS-inspecting proxy, have your **proxy URL** and **root CA path** ready
 
 ---
@@ -45,7 +45,7 @@ Create a `.env` in the repo root (you can start from `env/.env.sample.github`).
 | Variable | Required | Example / Notes |
 |---|---|---|
 | `OPENAI_API_KEY` | ✅ | Your **GitHub token** (used as the OpenAI key) |
-| `OPENAI_BASE_URL` | ✅ | `https://models.inference.ai.azure.com` |
+| `OPENAI_BASE_URL` | ✅ | `https://models.github.ai/inference` |
 | `MODEL` | ➖ | e.g., `gpt-4o-mini` (or another GitHub Models name used in the labs) |
 | `HTTPS_PROXY` / `HTTP_PROXY` | ➖ | e.g., `http://user:pass@proxy.company:8080` |
 | `REQUESTS_CA_BUNDLE` or `SSL_CERT_FILE` | ➖ | Path to org root CA (for TLS-inspection) |
