@@ -59,6 +59,30 @@ Create a `.env` in the repo root (you can start from `env/.env.sample.github`).
 > **Run all commands from the repo root** (where `requirements.txt` and `labs/` live).  
 > Avoid installing under OneDrive or `/mnt/c` in WSL—use a non-synced path like `C:\dev\Agents-Lab` or `~/work/Agents-Lab`.
 
+--
+
+### 🔒 Using a Private Package Registry (Regulated Environment)
+
+If your organization uses an internal registry (e.g., Artifactory), configure `pip` to use it by creating or updating a **`pip.conf`** (Linux/macOS) or **`pip.ini`** (Windows) file:
+
+#### Example `pip.conf` (Linux/macOS)
+[global]
+index-url = https://USER:TOKEN@artifactory.cibcdevops.com/artifactory/api/pypi/remote-pythonorg-public/simple
+extra-index-url = https://USER:TOKEN@artifactory.cibcdevops.com/artifactory/api/pypi/remote-pypi-cache/simple
+https://USER:TOKEN@artifactory.cibcdevops.com/artifactory/api/pypi/remote-pypi-public/simple
+trusted-host = artifactory.cibcdevops.com
+
+#### Example `pip.ini` (Windows)
+[global]
+index-url = https://USER:TOKEN@artifactory.cibcdevops.com/artifactory/api/pypi/remote-pythonorg-public/simple
+extra-index-url = https://USER:TOKEN@artifactory.cibcdevops.com/artifactory/api/pypi/remote-pypi-cache/simple
+https://USER:TOKEN@artifactory.cibcdevops.com/artifactory/api/pypi/remote-pypi-public/simple
+trusted-host = artifactory.cibcdevops.com
+
+✅ Replace `USER:TOKEN` with your Artifactory credentials or API token.
+
+---
+
 ### Linux / macOS
 
 ```bash
