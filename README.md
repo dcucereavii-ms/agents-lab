@@ -77,6 +77,7 @@ trusted-host = ARTIFACTORY_URL
 index-url = https://USER:TOKEN@ARTIFACTORY_URL/artifactory/api/pypi/remote-pythonorg-public/simple
 extra-index-url = https://USER:TOKEN@ARTIFACTORY_URL/artifactory/api/pypi/remote-pypi-cache/simple
 https://USER:TOKEN@ARTIFACTORY_URL/artifactory/api/pypi/remote-pypi-public/simple
+trusted-host = ARTIFACTORY_URL
 
 ✅ Replace `USER:TOKEN` with your Artifactory credentials or API token.
 
