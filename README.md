@@ -67,17 +67,16 @@ If your organization uses an internal registry (e.g., Artifactory), configure `p
 
 #### Example `pip.conf` (Linux/macOS)
 [global]
-index-url = https://USER:TOKEN@artifactory.cibcdevops.com/artifactory/api/pypi/remote-pythonorg-public/simple
-extra-index-url = https://USER:TOKEN@artifactory.cibcdevops.com/artifactory/api/pypi/remote-pypi-cache/simple
-https://USER:TOKEN@artifactory.cibcdevops.com/artifactory/api/pypi/remote-pypi-public/simple
-trusted-host = artifactory.cibcdevops.com
-
+index-url = https://USER:TOKEN@ARTIFACTORY_URL/artifactory/api/pypi/remote-pythonorg-public/simple
+extra-index-url = https://USER:TOKEN@ARTIFACTORY_URL/artifactory/api/pypi/remote-pypi-cache/simple
+https://USER:TOKEN@ARTIFACTORY_URL/artifactory/api/pypi/remote-pypi-public/simple
+trusted-host = ARTIFACTORY_URL
+ 
 #### Example `pip.ini` (Windows)
 [global]
-index-url = https://USER:TOKEN@artifactory.cibcdevops.com/artifactory/api/pypi/remote-pythonorg-public/simple
-extra-index-url = https://USER:TOKEN@artifactory.cibcdevops.com/artifactory/api/pypi/remote-pypi-cache/simple
-https://USER:TOKEN@artifactory.cibcdevops.com/artifactory/api/pypi/remote-pypi-public/simple
-trusted-host = artifactory.cibcdevops.com
+index-url = https://USER:TOKEN@ARTIFACTORY_URL/artifactory/api/pypi/remote-pythonorg-public/simple
+extra-index-url = https://USER:TOKEN@ARTIFACTORY_URL/artifactory/api/pypi/remote-pypi-cache/simple
+https://USER:TOKEN@ARTIFACTORY_URL/artifactory/api/pypi/remote-pypi-public/simple
 
 ✅ Replace `USER:TOKEN` with your Artifactory credentials or API token.
 
